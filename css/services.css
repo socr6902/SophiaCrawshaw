@@ -1,0 +1,33 @@
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  
+  .service-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .service-box h2 {
+    margin-top: 0;
+  }
+  
+  .service-box ul {
+    padding-left: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .services-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

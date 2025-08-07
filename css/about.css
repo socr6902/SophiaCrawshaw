@@ -1,0 +1,31 @@
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .about-headshot {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  @media (max-width: 700px) {
+    .about-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-text {
+      text-align: left;
+    }
+  }
+  
