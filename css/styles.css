@@ -1,51 +1,92 @@
 /* Add your CSS styles here */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     margin: 0;
     padding: 0;
+    background-color: #F2F0E4;
+    
   }
   
-  nav {
-    background-color: #333;
-    padding: 10px 0;
+  /* Sleek modern navbar */
+.navbar {
+    background-color: #B8D3D9; /* Soft Brown */
+    padding: 16px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
   
-  nav ul {
-    list-style-type: none;
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0D0D0D; /* Off-White */
+    text-decoration: none;
+    font-family: "playfair-display", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
     margin: 0;
     padding: 0;
   }
   
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    color: white;
+  .nav-links li a {
+    color: #0D0D0D;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
   }
   
-  nav ul li a:hover {
-    text-decoration: underline;
+  .nav-links li a:hover {
+    color: #B8D3D9; /* Light Blue accent */
   }
   
-  main {
-    padding: 20px;
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .nav-container {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 12px;
+    }
   }
+  
   
 /* HOMEPAGE SECTIONS */
 .hero {
     text-align: center;
     padding: 60px 20px;
-    background-color: #f4f4f4;
+    background-color: #40312C;
+    color: #F2F0E4
   }
   
   .hero h1 {
     margin-bottom: 10px;
+    color: #F2F0E4;
+    font-family: "playfair-display", serif;
+    font-weight: 400;
+    font-style: normal;
   }
   
   .home-section {
@@ -53,6 +94,13 @@ body {
     padding: 60px 20px;
     text-align: center;
     box-sizing: border-box;
+    
+  }
+
+  .home-section h2{
+    font-family: "playfair-display", serif;
+    font-weight: 400;
+    font-style: normal;
   }
   
   
@@ -123,15 +171,17 @@ body {
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    
   }
   
   .project-card {
-    max-width: 300px;
-    background: #fff;
+    max-width: 500px;
+    background: #B8D3D9;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
     text-align: center;
+    
   }
   
   .project-card img {
@@ -140,16 +190,20 @@ body {
   }
   
   .contact-cta {
-    background-color: #0077cc;
+    background-color: #40312C;
     color: white;
     text-align: center;
     padding: 50px 20px;
+    font-family: "playfair-display", serif;
+    font-weight: 400;
+    font-style: normal;
   }
   
   .contact-cta a.btn {
     background: white;
-    color: #0077cc;
+    color: #40312C;
     margin-top: 10px;
+    
   }
   
   /* Buttons */
@@ -160,23 +214,18 @@ body {
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
+
   }
   
   .btn {
-    background-color: #0077cc;
-    color: white;
-  }
-  
-  .btn:hover {
-    background-color: #005fa3;
+    background-color: #F2F0E4;
+    color: #0D0D0D;
   }
   
   .btn-small {
-    background-color: #eee;
-    color: #333;
+    background-color: #40312C;
+    color: #fff;
   }
   
-  .btn-small:hover {
-    background-color: #ddd;
-  }
+
   
