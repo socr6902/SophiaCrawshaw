@@ -102,46 +102,53 @@ body {
     font-weight: 400;
     font-style: normal;
   }
-  
-  
-  .about-content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 20px;
-    justify-content: center;
 
-  }
-
-  .about-row {
+  
+  .about-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 20px;
+    box-sizing: border-box;
   }
   
   .about-flex {
     display: flex;
-    gap: 70px;
+    gap: 50px;
     width: 100%;
-    align-items: center;
-
+    align-items: stretch;
+  }
+  
+  .headshot {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+  
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+  }
+  
+  .about-text p {
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
   }
   
   .about-btn {
     align-self: flex-end;
-  }
-
-  .about-row .headshot {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    flex-shrink: 0;
-    height: auto;
+    margin-top: 1rem;
   }
   
-  @media (max-width: 768px) {
+  
+  @media (max-width: 875px) {
     .about-row {
       flex-direction: column;
       align-items: center;
@@ -162,6 +169,9 @@ body {
     .about-btn {
       align-self: flex-end;
       margin-top: 1rem;
+    }
+    .hidden {
+        display: none;
     }
   }
   
@@ -254,19 +264,21 @@ body {
   
   /* BASIC IMAGE CAROUSEL STYLES */
 .carousel-section {
-    padding: 60px 20px;
-    background-color: #F2F0E4;
-    text-align: center;
-  }
-  
-  .carousel-wrapper {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
+  padding: 60px 30px;
+  background-color: #F2F0E4;
+  display: flex;
+  justify-content: flex-end; /* Push content to the right */
+}
+
+.carousel-wrapper {
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto; /* Push to the right */
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
   
   .carousel-track {
     display: flex;
