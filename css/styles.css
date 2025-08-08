@@ -173,6 +173,9 @@ body {
     .hidden {
         display: none;
     }
+    .headshot {
+        align-self: center;
+    }
   }
   
 
