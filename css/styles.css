@@ -12,7 +12,7 @@ body {
   
   /* Sleek modern navbar */
 .navbar {
-    background-color: #D9E8F5; /* Soft Brown */
+    background-color: #D9E8F5; 
     padding: 16px 0;
     width: 100%;
     position: sticky;
@@ -133,7 +133,7 @@ body {
   .about-text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex: 1;
   }
   
@@ -142,10 +142,6 @@ body {
     line-height: 1.5;
   }
   
-  .about-btn {
-    align-self: flex-end;
-    margin-top: 1rem;
-  }
   
   
   @media (max-width: 875px) {
@@ -223,7 +219,7 @@ body {
     background-color: #F26101;
     color: #fff;
     text-align: center;
-    padding: 50px 20px;
+    padding: 30px 20px;
     font-family: "playfair-display", serif;
     font-weight: 400;
     font-style: normal;
@@ -237,34 +233,34 @@ body {
   }
   
   /* Buttons */
-  .btn, .btn-small {
+  .bluebtn, .orangebtn, .whitebtn {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 4px;
+    font-family: "roboto", sans-serif;
 
   }
   
-  .btn {
-    background-color: #fff;
-    color: #304269;
-  }
-  
-  .btn-small {
-    background-color: #F26101;
+  .bluebtn {
+    background-color: #304269;
     color: #fff;
   }
   
+  .orangebtn {
+    background-color: #F26101;
+    color: #fff;
+    align-self: flex-end;
+  }
 
-  body {
-    font-family: "roboto", sans-serif;
-    background: #fff;
-    margin: 0;
-    padding: 0;
+  .whitebtn {
+    background-color: #fff;
+    color: #000;
   }
   
+
   /* BASIC IMAGE CAROUSEL STYLES */
 .carousel-section {
   padding: 60px 30px;
@@ -315,7 +311,7 @@ body {
   .testimonials {
     display: flex;
     justify-content: space-around;
-    background-color: #91BED4;
+    background-color: #D9E8F5;
     padding: 40px;
     color: #0D0D0D;
   }
@@ -353,7 +349,7 @@ body {
   }
   
   .accordion {
-    background-color: #D9E8F5;
+    background-color: #fff;
     color: #0D0D0D;
     cursor: pointer;
     padding: 15px;
