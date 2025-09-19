@@ -9,7 +9,7 @@
 
 </head>
 <body>
-  <!-- NAVBAR -->
+  <!-- NAVBAR
   <nav class="navbar">
     <div class="nav-container">
       <a href="index.html" class="logo">Sophia Crawshaw</a>
@@ -20,7 +20,7 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
-  </nav>
+  </nav> -->
   
 
   <main>
@@ -35,17 +35,65 @@
     </div>
   </section>     
       
-      <!-- BASIC IMAGE CAROUSEL -->
-    <section class="carousel-section">
-        <div class="carousel-wrapper">
-        <div class="carousel-track">
-            <img src="images/ryancolone.png" alt="Ryan Colone site" />
-            <img src="images/charlieberger.png" alt="Charlie Berger site" />
-            <img src="images/polaris.png" alt="Polaris site" />
-            <img src="images/pgfx.png" alt="Polaris Global value site" />
-        </div>
-        </div>
-    </section>
+<!-- FULL-WIDTH 3-UP SHOWCASE -->
+<section class="showcase-3up" aria-label="Some of my work">
+  <div class="scroller-3up" id="showcase">
+
+    <!-- LEFT: dimmed, big label -->
+    <figure class="card prev">
+      <img id="slidePrev" alt="">
+      <div class="shade"></div>
+      <h2 class="label">My Work</h2>
+    </figure>
+
+    <!-- CENTER: main image (no dim) -->
+    <figure class="card active">
+      <img id="slideActive" alt="">
+    </figure>
+
+    <!-- RIGHT: dimmed, shows caption for CENTER -->
+    <figure class="card next">
+      <img id="slideNext" alt="">
+      <div class="shade"></div>
+      <aside class="cap-overlay" aria-live="polite">
+        <h3 id="oTitle" class="cap-title">Title</h3>
+        <p id="oRole" class="cap-role">Role</p>
+        <p id="oDesc" class="cap-desc">Description</p>
+        <a id="oLink" class="bluebtn" target="_blank" rel="noopener">View site →</a>
+      </aside>
+    </figure>
+
+    <!-- Optional nav (hidden by CSS if you're auto-playing) -->
+    <button class="nav prev" id="prevBtn" aria-label="Previous project">‹</button>
+    <button class="nav next" id="nextBtn" aria-label="Next project">›</button>
+  </div>
+
+  <!-- Source slides (hidden); edit/add your projects here -->
+  <div id="workSource" class="sr-only" aria-hidden="true">
+    <img src="images/ryancolone.png" alt="Ryan Colone site"
+         data-title="Ryan Colone"
+         data-role="Redesign • Performance"
+         data-desc="Rebuilt IA, improved color contrast, and tuned performance for a faster mobile LCP."
+         data-link="https://example.com/ryancolone">
+    <img src="images/charlieberger.png" alt="Charlie Berger site"
+         data-title="Charlie Berger"
+         data-role="Design & Build • Responsive"
+         data-desc="Portfolio for a comedian/actor. Designed layout, built carousel, optimized images."
+         data-link="https://itscharlieberger.com">
+    <img src="images/polaris.png" alt="Polaris site"
+         data-title="Polaris"
+         data-role="Design System • CMS"
+         data-desc="Lightweight design system + templated blocks for no-code updates."
+         data-link="https://example.com/polaris">
+    <img src="images/pgfx.png" alt="Polaris Global Value"
+         data-title="Polaris Global Value"
+         data-role="Web Dev • Accessibility"
+         data-desc="WCAG-minded rebuild with semantic structure and improved keyboard navigation."
+         data-link="https://example.com/pgfx">
+  </div>
+</section>
+
+
     
     <!-- SERVICES PREVIEW -->
     <section class="home-section">
