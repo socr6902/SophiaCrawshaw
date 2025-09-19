@@ -10,147 +10,146 @@ body {
     
   }
   
-  /* Sleek modern navbar */
-.navbar {
-    background-color: #929D74; 
-    padding: 16px 0;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-  
-  .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #140d07;
-    text-decoration: none;
-    font-family: "playfair-display", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 32px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li a {
-    color: #140d07;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
+/* ===== NAVBAR — transparent over hero ===== */
 
-  .nav-links li a :hover {
-    color: #FFFCF8;
-  }
-  
-  /* Mobile responsive
-  @media (max-width: 768px) {
-    .nav-container {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      gap: 12px;
-    }
-  }
-   */
-  
+:root {
+  --nav-h: 64px;                /* adjust if you want a taller bar */
+}
+
+/* sits over the hero */
+.navbar {
+  position: absolute;              /* overlay (not sticky space-taking) */
+  top: 0; left: 0; width: 100%;
+  height: var(--nav-h);
+  z-index: 1000;
+
+  background: transparent;      /* truly transparent */
+  /* optional subtle readability aid (comment out to be 100% clear)
+  backdrop-filter: saturate(140%) blur(4px);
+  */
+}
+
+/* layout: name left / links right, centered vertically */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 clamp(16px, 4vw, 32px);
+
+  display: flex;
+  align-items: center;          /* center vertically in the bar */
+  justify-content: space-between;
+}
+
+/* name (left) */
+.logo {
+  font-family: "playfair-display", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #fff;                  /* white over hero */
+}
+
+/* links (right) */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: clamp(18px, 3vw, 36px);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;                  /* white links */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  opacity: 0.92;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.nav-links li a:hover {         /* fixed the selector (no space before :hover) */
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* smaller screens: tighten spacing */
+@media (max-width: 768px) {
+  :root { --nav-h: 56px; }
+  .nav-links { gap: clamp(12px, 4vw, 20px); }
+  .logo { font-size: 1.25rem; }
+}
+
 /* HOMEPAGE SECTIONS */
+/* ===== HERO – short centered banner ===== */
 
 .hero {
   position: relative;
   width: 100%;
+  height: clamp(320px, 50vh, 720px);
   overflow: hidden;
 }
 
-/* Image anchored bottom-right, resizes from that corner */
+/* Banner image fills the hero area */
 .hero-photo .hero-img {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;         /* show full image */
-  object-position: right bottom; /* anchor image bottom-right */
+  height: 100%;
+  object-fit: cover;          /* cover the short banner */
+  object-position: center;    /* center the subject */
 }
 
-/* Optional dark veil for legibility */
+/* Subtle veil for legibility (center-friendly) */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-  to right,
-  rgba(0,0,0,0.65) 0%,
-  rgba(0,0,0,0.55) 20%,
-  rgba(0,0,0,0.40) 40%,
-  rgba(0,0,0,0.25) 60%,
-  rgba(0,0,0,0.12) 80%,
-  rgba(0,0,0,0.0) 100%
-);
-
+  background:rgba(0,0,0,0.3);
   pointer-events: none;
 }
 
-/* Overlay text anchored center-left */
+/* Center the overlayed text block */
 .hero-overlay.cl-anchored {
   position: absolute;
-  left: clamp(16px, 5vw, 80px);
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
-  text-align: left;
+  transform: translate(-50%, -50%);
+  width: min(90vw, 1000px);
+  padding-inline: clamp(12px, 3vw, 32px);
+  text-align: center;
   color: #FFFCF8;
-  width: clamp(40vw, 50vw, 60vw); /* scales with viewport width */
-  max-width: none;                /* remove fixed character cap */
 }
 
+/* Typography tuned for a shorter banner */
 .hero-title {
   font-family: "playfair-display", serif;
   font-weight: 400;
   line-height: 1.1;
   margin: 0 0 10px 0;
-  font-size: calc(2rem + 2vw); /* scales linearly with viewport */
-  max-width: 90%;              /* prevents wrapping too soon */
+  font-size: clamp(28px, 4.5vw, 56px);
+  max-width: 22ch;
+  margin-inline: auto;
 }
 
 .hero-subtitle {
   font-family: "roboto", sans-serif;
   font-weight: 300;
-  margin: 0 0 14px 0;
-  font-size: calc(0.7rem + 0.5vw); /* smoother responsive text */
+  margin: 0 auto 12px;
+  font-size: clamp(14px, 1.4vw, 20px);
   line-height: 1.55;
+  max-width: 60ch;
   opacity: 0.95;
-  max-width: 90%;
 }
 
-/* Responsive CTA that shrinks linearly with viewport width */
+/* CTA stays centered and scales linearly */
 .hero-cta {
   display: inline-block;
+  margin-inline: auto;
   font-weight: 600;
   line-height: 1.2;
-  /* font scales linearly */
   font-size: clamp(0.9rem, 0.7rem + 0.4vw, 1.15rem);
-
-  /* padding scales linearly; keeps ~44px tap target on phones */
   padding: clamp(10px, 0.6rem + 0.6vw, 14px)
            clamp(16px, 1rem + 1vw, 24px);
-
   border-radius: clamp(6px, 0.3rem + 0.3vw, 10px);
   border: 1px solid rgba(255,255,255,0.6);
   backdrop-filter: saturate(115%) blur(2px);
@@ -165,81 +164,83 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-
-/* ========= RESPONSIVE TUNING (only overrides) ========= */
-
-/* Tablet-ish: give the text a bit more room but keep it left */
-@media (max-width: 900px) {
-  .hero-overlay.cl-anchored {
-    left: clamp(14px, 4vw, 40px);
-    right: clamp(14px, 6vw, 80px);
-    max-width: none;
-    width: 60vw; /* scale with viewport */
-    text-align: left;
-  }
-
-  .hero-title {
-    font-size: clamp(2rem, 5.2vw, 3.25rem);
-    line-height: 1.08;
-    letter-spacing: 0.2px;
-  }
-  .hero-subtitle {
-    font-size: clamp(0.7rem, 2vw, 1rem);
-  }
-}
-
-/* Phone: full-width text, smaller type, centered, and stronger wash for contrast */
+/* ===== Responsive tweaks ===== */
 @media (max-width: 680px) {
+  .hero-title    { font-size: clamp(24px, 6vw, 36px); }
+  .hero-subtitle { font-size: clamp(14px, 3.2vw, 18px); }
   .hero::before {
-    background: linear-gradient(
-      to right,
-      rgba(0,0,0,0.75) 0%,
-      rgba(0,0,0,0.55) 40%,
-      rgba(0,0,0,0.20) 85%,
-      rgba(0,0,0,0.00) 100%
-    );
-  }
-
-  .hero-overlay.cl-anchored {
-    left: 16px;
-    right: 16px;
-    top: auto;              /* stop vertical centering */
-    bottom: 18px;           /* sit above the bottom edge */
-    transform: none;        /* no translate on small screens */
-    width: auto;            /* use left/right for width */
-  }
-
-  .hero-title {
-    /* nice smooth shrink; capped so it doesn’t overwhelm */
-    font-size: clamp(1.6rem, 7vw, 2.4rem);
-    line-height: 1.12;
-    margin-bottom: 8px;
-    text-wrap: balance;     /* nicer line breaks where supported */
-  }
-
-  .hero-subtitle {
-    font-size: clamp(0.8rem, 2.1vw, 1.2rem);
-    line-height: 1.5;
-    margin-bottom: 12px;
-    max-width: 36ch;
-    margin-left: 0;      /* keep aligned to left */
-    margin-right: 0;
-    text-align: left;    /* reinforce left alignment */
-  }
-  
-
-  .hero-cta {
-    font-size: clamp(0.9rem, 3.2vw, 1rem);
-    padding: clamp(10px, 2.8vw, 12px) clamp(16px, 4.5vw, 22px);
-    border-radius: 6px;
+    background:
+      radial-gradient(90% 90% at 50% 50%,
+        rgba(0,0,0,0.52) 0%,
+        rgba(0,0,0,0.32) 45%,
+        rgba(0,0,0,0.14) 75%,
+        rgba(0,0,0,0.00) 100%);
   }
 }
 
-/* Very small phones: tighten a bit more */
-@media (max-width: 480px) {
-  .hero-title { font-size: clamp(1.45rem, 6.6vw, 2.1rem); }
-  .hero-subtitle { font-size: clamp(0.9rem, 3.4vw, 1.05rem); }
+/* ===== ABOUT: left 1/3 text, right 2/3 image ===== */
+.about-split{
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr); /* 1/3 | 2/3 */
+  align-items: stretch;
+  width: 100%;
+  height: clamp(320px, 45vh, 560px);   /* ↓ shorter than before */
+  background: #9EA68F;
 }
+
+
+/* text column */
+.about-copy{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(10px, 2.2vw, 16px);
+  padding: clamp(16px, 4vw, 56px);
+  color: #140d07;
+}
+.about-title{
+  margin: 0;
+  font-family: "playfair-display", serif;
+  font-weight: 400;
+  line-height: 1.1;
+  font-size: clamp(1.6rem, 1.2rem + 2.5vw, 3rem);
+}
+.about-blurb{
+  margin: 0;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
+  line-height: 1.55;
+  font-size: clamp(0.95rem, 0.9rem + 0.6vw, 1.1rem);
+  max-width: 50ch;
+}
+
+/* image column */
+.about-media{
+  position: relative;
+  margin: 0;                 /* remove default figure margins */
+  overflow: hidden;
+}
+.about-media img{
+  position: absolute;
+  inset: 0;                  /* fill the figure */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;         /* cover the full 2/3 area */
+  object-position: right center; /* keep subject toward the right */
+  display: block;
+}
+
+/* ===== Responsive: stack on small screens (image first) ===== */
+@media (max-width: 900px){
+  .about-split{
+    grid-template-columns: 1fr;
+    height: auto;                       /* let content define height */
+  }
+  .about-media{ 
+    height: clamp(260px, 42vh, 480px);  /* shorter image on phones */
+  }
+}
+
 
   .services-preview {
     display: flex;
@@ -258,17 +259,10 @@ body {
     border-radius: 8px;
     padding: 20px;
     max-width: 300px;
-    background: #FFFCF8;
+    background: #F2EDE4;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   }
   
-  .portfolio-preview {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    
-  }
   
   .project-card {
     max-width: 500px;
@@ -330,126 +324,133 @@ body {
     color: #000;
   }
   
-/* ===== FULL-WIDTH 3-UP SHOWCASE (no gaps + slide) ===== */
+/* ===== SEE MY WORK — image overlay (title+CTA) + caption BELOW ===== */
 
-/* container: fit within page, padding included in width */
-.showcase-3up {
-  width: 100%;                 /* was 100vw */
-  box-sizing: border-box;      /* include padding in width */
-  background: #BBBE94;
-  padding: clamp(12px, 2vw, 24px);
-  overflow: hidden;
+.work-grid {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+  background: #F2EBDC;
+  padding: clamp(16px, 3.5vw, 48px);
 }
 
-/* track: three cards with an exact gap budget */
-.scroller-3up {
-  position: relative;
-  display: flex;
+.work-title {
+  margin: 0 0 clamp(14px, 2.2vw, 28px);
+  padding: 0;                      
+  font-family: "playfair-display", serif;
+  font-weight: 400;
+  line-height: 1.1;
+  font-size: clamp(1.6rem, 1.2rem + 2.5vw, 3rem);
+  color: #677356;
+}
+
+
+.work-grid-inner {
   --gap: clamp(12px, 2vw, 20px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--gap);
-  transform: translateX(0);
-  transition: transform 560ms cubic-bezier(.25,.8,.25,1);
-  will-change: transform;
 }
 
-/* allow flex children to actually shrink in their column */
-.scroller-3up > * { min-width: 0; }
-
-/* 3-up layout that fits exactly inside the track width */
-.scroller-3up .card {
-  position: relative;
-  flex: 0 0 calc((100% - 2 * var(--gap)) / 3);
+/* each card = media box + separate caption */
+.work-card {
   margin: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.3vw, 14px);
+  container-type: inline-size;              /* lets overlay text scale per card */
 }
 
-/* images fill their card (no extra bleed) */
-.scroller-3up img {
+/* media box (rounded) */
+.work-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  isolation: isolate;
+  background: #FFFCF8;
+}
+.work-media img {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 3 / 2;                      /* taller look; change to 4/3 or 5/4 if you want */
   object-fit: cover;
 }
 
-/* Dim edges only */
-.scroller-3up .shade {
+/* overlay: title + CTA only */
+.work-overlay {
   position: absolute; inset: 0;
-  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(8px, 2cqw, 16px);
+  padding: clamp(16px, 3cqw, 28px);
+  color: #FFFCF8;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.65) 0%,
+    rgba(0,0,0,.45) 40%,
+    rgba(0,0,0,.12) 70%,
+    rgba(0,0,0,0) 100%
+  );
 }
-
-/* Left label */
-.scroller-3up .label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.cap-title{
   margin: 0;
-  width: 90%;              /* lets multi-line text wrap nicely */
-  text-align: center;
-  z-index: 2;
-  color: #FFFCF8;
   font-family: "playfair-display", serif;
   font-weight: 400;
-  font-size: 4rem;
-  letter-spacing: 0.2px;
-  pointer-events: none;
+  line-height: 1.1;
+  font-size: clamp(1.3rem, 4.6cqw, 2rem);
+}
+.work-cta{
+  pointer-events: auto;
+  align-self: flex-start;
+  font-size: clamp(.9rem, 2.2cqw, 1rem);
+  padding: clamp(9px, 2cqw, 12px) clamp(14px, 3cqw, 20px);
+  border-radius: clamp(6px, 1.2cqw, 10px);
 }
 
-/* Right caption overlay (for active slide) */
-.cap-overlay {
-  position: absolute;
-  right: clamp(14px, 3vw, 28px);
-  left: clamp(14px, 3vw, 28px);
-  bottom: clamp(14px, 3vw, 28px);
-  color: #FFFCF8;
-  text-align: left;
-  pointer-events: none;
+/* caption OUTSIDE the image box */
+.work-caption {
+  padding: 0 clamp(4px, 1cqw, 6px);
+  color: #000;
 }
-.cap-title {
+.cap-role{
   margin: 0 0 6px 0;
-  font-family: "playfair-display", serif;
-  font-weight: 400;
-  font-size: clamp(1.1rem, 1rem + 0.8vw, 1.8rem);
-}
-.cap-role {
-  margin: 0 0 8px 0;
-  opacity: 0.9;
+  opacity: .9;
   font-family: "roboto", sans-serif;
   font-weight: 300;
-  font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.1rem);
+  font-size: clamp(.95rem, 3.2cqw, 1.1rem);
 }
-.cap-desc {
-  margin: 0 0 12px 0;
+.cap-desc{
+  margin: 0;
   line-height: 1.55;
   font-family: "roboto", sans-serif;
   font-weight: 300;
+  font-size: clamp(.95rem, 3cqw, 1.05rem);
+  max-width: 62ch;
 }
 
-/* optional nav buttons if you’re using them */
-.scroller-3up .nav { display: none; } /* hide on desktop if auto-playing */
-
-/* Mobile: show center only; move caption under it */
-@media (max-width: 900px) {
-  .scroller-3up { flex-wrap: nowrap; }
-  .scroller-3up .card { flex: 0 0 100%; }
-  .scroller-3up .card.prev { height: auto; }
-  .scroller-3up .card.prev .shade { display: none; }
-  .scroller-3up .card.prev img { display: none; }
-  .scroller-3up .card.prev .label {
-    position: static; color: #1e140a;
-    font-size: clamp(1.6rem, 1.2rem + 3vw, 2.2rem);
-    margin: 0 12px;
-  }
-  .scroller-3up .card.next .shade { display: none; }
-  .scroller-3up .card.next .cap-overlay {
-    position: static; color: #140d07; margin: 0 12px 6px;
-  }
+.site-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  font-family: "roboto", sans-serif;
+  background-color: #677356;
+  color: #fff;
 }
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
-    
+/* hover polish */
+.work-media:hover img { transform: scale(1.02); transition: transform 280ms ease; }
+
+/* responsive columns */
+@media (max-width: 1200px) { .work-grid-inner { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px)  { .work-grid-inner { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px)  { .work-grid-inner { grid-template-columns: 1fr; } }
+
+
   /* TESTIMONIALS */
   .testimonials {
     display: flex;
