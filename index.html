@@ -34,21 +34,88 @@
     </div>
   </section>    
   
-  <!-- SERVICES PREVIEW -->
-  <section class="home-section">
-    <h2>Services</h2>
-    <div class="services-preview">
-      <div class="service-box">
-        <h3>Code & Handoff</h3>
-        <p>Custom-built websites delivered with clean code, documentation, and full ownership.</p>
+  <section class="services" id="services">
+    <div class="services-inner">
+      <header class="services-lead">
+        <h2 class="services-title">Services</h2>
+        <p class="services-intro">
+          From discovery to launch—and beyond. Every build is fast, accessible, and easy to update.
+        </p>
+        <!-- <a href="contact.html" class="bluebtn">Start a project →</a> -->
+      </header>
+  
+      <div class="services-grid services-4">
+        <!-- 1) Design & Discovery -->
+        <article class="service-card">
+          <h3 class="svc-title">Design & Discovery</h3>
+          <p class="svc-sub">Brand fit, UX flow, and high-fidelity mockups.</p>
+          <ul class="svc-list">
+            <li>Audit, goals, & success metrics</li>
+            <li>Site map, user flows, wireframes</li>
+            <li>Visual direction (type, color, comps)</li>
+            <li>High-fidelity mockups in Figma</li>
+          </ul>
+          <div class="svc-meta">
+            <span class="chip">1–2 weeks</span>
+            <span class="chip">Best for new sites</span>
+          </div>
+        </article>
+  
+        <!-- 2) Design & Build / Code (Handoff) -->
+        <article class="service-card">
+          <h3 class="svc-title">Design & Build / Code (Handoff)</h3>
+          <p class="svc-sub">Custom site, production-ready, fully yours.</p>
+          <ul class="svc-list">
+            <li>Semantic, responsive HTML/CSS/JS</li>
+            <li>Performance budget & image optimization</li>
+            <li>WCAG-minded components & keyboard nav</li>
+            <li>Repo, docs, and deploy (Vercel/Netlify/etc.)</li>
+          </ul>
+          <div class="svc-meta">
+            <span class="chip">2–4 weeks</span>
+            <span class="chip">Full ownership</span>
+          </div>
+        </article>
+  
+        <!-- 3) Design & Build / Code (Maintain) -->
+        <article class="service-card">
+          <h3 class="svc-title">Design & Build / Code (Maintain)</h3>
+          <p class="svc-sub">Ongoing updates, fixes, and enhancements.</p>
+          <ul class="svc-list">
+            <li>Monthly content & small features</li>
+            <li>Bug fixes, backups, & monitoring</li>
+            <li>Perf & accessibility touch-ups</li>
+            <li>Quarterly review & roadmap</li>
+          </ul>
+          <div class="svc-meta">
+            <span class="chip">Monthly</span>
+            <span class="chip">Best for growth</span>
+          </div>
+        </article>
+  
+        <!-- 4) Performance & Accessibility Audits -->
+        <article class="service-card">
+          <h3 class="svc-title">Performance & Accessibility Audits</h3>
+          <p class="svc-sub">Measure, fix, and ship improvements.</p>
+          <ul class="svc-list">
+            <li>Lighthouse & Core Web Vitals report</li>
+            <li>Color contrast, ARIA, focus & keyboard</li>
+            <li>Asset, font, and script optimization</li>
+            <li>Action plan + optional implementation</li>
+          </ul>
+          <div class="svc-meta">
+            <span class="chip">1–2 weeks</span>
+            <span class="chip">Existing sites</span>
+          </div>
+        </article>
       </div>
-      <div class="service-box">
-        <h3>Code & Manage</h3>
-        <p>Everything from the build, plus updates, fixes, and ongoing support to keep things running smoothly.</p>
+  
+      <div class="services-cta">
+        <a href="services.html" class="bluebtn">See detailed packages →</a>
       </div>
     </div>
-    <a href="services.html" class="bluebtn">See Packages →</a>
   </section>
+  
 
   <!-- ABOUT (1/3 text • 2/3 image) -->
 <section class="about-split" id="about">
@@ -113,3 +180,69 @@
           <p class="cap-desc">Portfolio for a comedian/actor. Designed layout, built carousel, optimized images.</p>
         </figcaption>
       </figure>
+  
+      <figure class="work-card">
+        <div class="work-media">
+          <img src="images/pgfx.png" alt="Polaris Global Value website">
+          <div class="work-overlay">
+            <h3 class="cap-title">Polaris Global Value</h3>
+            <a class="site-btn" href="https://example.com/pgfx" target="_blank" rel="noopener">View site →</a>
+          </div>
+        </div>
+        <figcaption class="work-caption">
+          <p class="cap-role">Web Dev • Accessibility</p>
+          <p class="cap-desc">WCAG-minded rebuild with semantic structure and improved keyboard navigation.</p>
+        </figcaption>
+      </figure>
+  
+    </div>
+  </section>
+  
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials">
+        <div class="testimonial-left">
+          <h2>Real Words from Real Clients</h2>
+          <p>Clear, direct testimonials from those who’ve worked with me.</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="quote">“Sophie built exactly what I envisioned and made it better. I’d hire her again in a heartbeat.”</p>
+          <div class="author">
+            <img src="images/client1.jpg" alt="Client Photo" />
+            <div>
+              <strong>Jordan Miles</strong><br/>
+              ★★★★★
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+          <button class="accordion">What services do you offer?</button>
+          <div class="panel"><p>Website design, custom code, and ongoing support.</p></div>
+  
+          <button class="accordion">How long does it take?</button>
+          <div class="panel"><p>Usually 2–4 weeks, depending on scope.</p></div>
+  
+          <button class="accordion">Do I need to know code?</button>
+          <div class="panel"><p>Nope — I handle that. You just share your vision.</p></div>
+        </div>
+      </section>
+  
+
+    
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta">
+      <h2>Have a project in mind?</h2>
+      <p>Let’s talk and bring your vision to life.</p>
+      <a href="contact.html" class="whitebtn">Contact Me</a>
+    </section>
+
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
