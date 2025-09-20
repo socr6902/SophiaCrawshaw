@@ -8,32 +8,67 @@
   <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">Sophia Crawshaw</a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>  
 
   <main>
-    <h1>Contact Me</h1>
-    <p>Have a project in mind or just want to say hello? Fill out the form below or reach out directly at <a href="mailto:sophiavcrawshaw@gmail.com">sophiavcrawshaw@gmail.com</a>.</p>
+      <!-- CONTACT -->
+<section class="contact-split" id="contact">
+  <!-- Left: simple header/copy -->
+  <div class="contact-copy">
+    <h2 class="contact-title">Contact</h2>
+    <p class="contact-blurb">
+      Have a project in mind? I’d love to hear about it.
+      Send a quick note and I’ll reply within 1–2 business days.
+    </p>
+    <p class="contact-email">
+      Or email me directly: <a href="mailto:sophiavcrawshaw@gmail.com">sophiavcrawshaw@gmail.com</a>
+    </p>
+  </div>
 
-    <form class="contact-form" action="mailto:youremail@example.com" method="POST" enctype="text/plain">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+  <!-- Right: the “old computer” with the form in the screen -->
+  <figure id="computerGuestbook" class="cutout-computer">
+    <img
+      class="computer-img"
+      src="/images/compute.svg"
+      alt="Vintage beige computer with a glowing CRT screen"
+    >
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+    <!-- the screen area -->
+    <div class="screen-slot crt-lite">
+      <form action="https://formsubmit.co/sophiavcrawshaw@gmail.com" method="POST" class="guest-form" aria-label="Contact form">
+        <!-- formsubmit settings -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New message from sophiacrawshaw.com">
+        <!-- optional thank-you redirect (create /thanks.html if you want this) -->
+        <!-- <input type="hidden" name="_next" value="https://sophiacrawshaw.com/thanks.html"> -->
+        <!-- honeypot (spam trap) -->
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
+        <label class="sr-only" for="contact-name">Name</label>
+        <input id="contact-name" type="text" name="name" placeholder="Name" required class="field" aria-required="true">
 
-      <button type="submit">Send</button>
-    </form>
+        <label class="sr-only" for="contact-email">Your Email</label>
+        <input id="contact-email" type="email" name="email" placeholder="Your Email" required class="field" aria-required="true">
+
+        <label class="sr-only" for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" placeholder="Message" class="field" required></textarea>
+
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </figure>
+</section>
+
   </main>
 </body>
 </html>

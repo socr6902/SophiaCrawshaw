@@ -1,34 +1,174 @@
-.contact-form {
-    max-width: 500px;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+/* ===== Contact split layout (text left, computer right) ===== */
+.contact-split{
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(680px, 2fr);
+  align-items: center;
+  gap: clamp(18px, 5vw, 64px);
+  padding: clamp(28px, 6vw, 96px) clamp(16px, 6vw, 80px);
+  background: #F2EBDC;
+}
+
+.contact-copy{
+  color: #140d07;
+  max-width: 48ch;
+}
+
+.contact-title{
+  margin: 0 0 8px 0;
+  font-family: "playfair-display", serif;
+  font-weight: 400;
+  line-height: 1.1;
+  font-size: clamp(1.8rem, 1.2rem + 2.4vw, 3rem);
+}
+
+.contact-blurb{
+  margin: 0 0 12px 0;
+  font-family: "roboto", sans-serif;
+  font-weight: 300;
+  line-height: 1.55;
+  font-size: clamp(0.95rem, 0.9rem + 0.5vw, 1.1rem);
+}
+
+.contact-email a{
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+/* stack on small screens */
+@media (max-width: 900px){
+  .contact-split{
+    grid-template-columns: 1fr;
+    align-items: start;
   }
-  
-  .contact-form label {
-    font-weight: bold;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: inherit;
-  }
-  
-  .contact-form button {
-    padding: 12px;
-    background-color: #0077cc;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .contact-form button:hover {
-    background-color: #005fa3;
-  }
-  
+  .contact-copy{ order: 1; }
+  .cutout-computer{ order: 2; margin: 8px auto 0; }
+}
+
+/* ================================
+   Computer cutout with live screen
+   (LOCKED to the SVG outline)
+================================ */
+.cutout-computer{
+  /* ALIGN the screen — keep your tuned values */
+  --s-left: 35.0%;
+  --s-top:  6.1%;
+  --s-w:    29.5%;
+  --s-h:    29.3%;
+
+  /* SET the artboard aspect ratio of your SVG
+     -> Open computer.svg and copy its viewBox, e.g. viewBox="0 0 1600 1200"
+     -> then set: --art-w: 1600; --art-h: 1200;                                    */
+  --art-w: 1600;
+  --art-h: 1200;
+
+  position: relative;
+  width: clamp(660px, 64vw, 1180px);
+  aspect-ratio: var(--art-w) / var(--art-h);   /* << keeps a consistent box */
+  margin: 0 auto;                               /* center in the grid cell */
+  justify-self: center;
+}
+
+/* make the image fill the same box the overlay uses */
+.computer-img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;   /* keep SVG proportions perfectly */
+  user-select: none;
+  pointer-events: none;
+}
+
+/* the screen overlay now scales 1:1 with the image box */
+.screen-slot{
+  position: absolute;
+  left: var(--s-left); 
+  top: var(--s-top);
+  width: var(--s-w); 
+  height: var(--s-h);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 6px;
+  background: var(--paper-cream, #F7F3EA);
+  overflow: auto;
+  border-radius: 2px;
+}
+
+/* subtle scanlines */
+.crt-lite::after{
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,0,0,.06) 0,
+    rgba(0,0,0,.06) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+/* “retro CRT” form styling inside the screen */
+.screen-slot .guest-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  gap: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.screen-slot .field,
+.screen-slot .btn{
+  --crt-bg: #9ea68f8b;
+  --crt-border: #2426215b;
+  --crt-text: #242621;
+
+  background: var(--crt-bg);
+  color: var(--crt-text);
+  border: 1px solid var(--crt-border);
+  border-radius: 4px;
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.screen-slot .field{
+  font-size: 12px;
+  padding: 6px 8px;
+}
+.screen-slot .guest-form input.field{ height: 20px; }
+.screen-slot .guest-form textarea.field{ min-height: 92px; resize: vertical; }
+
+.screen-slot .field:focus-visible{
+  box-shadow: 0 0 0 2px rgba(71,187,71,.35);
+}
+
+.screen-slot .btn{
+  align-self: flex-end;
+  font-size: 12px;
+  padding: 6px 12px;
+  cursor: pointer;
+  background: #677356;
+}
+.screen-slot .btn:hover{
+  filter: brightness(1.07);
+}
+
+/* small phones */
+@media (max-width: 600px){
+  .cutout-computer{ width: min(118vw, 920px); }
+  .screen-slot{ padding: 5px; }
+  .screen-slot .field{ font-size: 11px; padding: 5px 7px; }
+  .screen-slot .guest-form textarea.field{ min-height: 56px; }
+  .screen-slot .btn{ font-size: 11px; padding: 5px 10px; }
+}
+
+/* accessible-only label helper */
+.sr-only{
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
