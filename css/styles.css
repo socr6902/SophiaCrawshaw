@@ -1,5 +1,3 @@
-  /* Add your CSS styles here */
-
   body {
       font-family: "roboto", sans-serif;
       font-weight: 300;
@@ -10,26 +8,20 @@
       
     }
     
-  /* ===== NAVBAR — transparent over hero ===== */
+/* ===== NAVBAR — transparent over hero ===== */
 
   :root {
-    --nav-h: 64px;                /* adjust if you want a taller bar */
+    --nav-h: 64px;            
   }
 
-  /* sits over the hero */
   .navbar {
-    position: absolute;              /* overlay (not sticky space-taking) */
+    position: absolute;             
     top: 0; left: 0; width: 100%;
     height: var(--nav-h);
     z-index: 1000;
-
-    background: transparent;      /* truly transparent */
-    /* optional subtle readability aid (comment out to be 100% clear)
-    backdrop-filter: saturate(140%) blur(4px);
-    */
+    background: transparent;     
   }
 
-  /* layout: name left / links right, centered vertically */
   .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -37,7 +29,7 @@
     padding: 0 clamp(16px, 4vw, 32px);
 
     display: flex;
-    align-items: center;          /* center vertically in the bar */
+    align-items: center;         
     justify-content: space-between;
   }
 
@@ -47,7 +39,7 @@
     font-weight: 400;
     font-size: 1.5rem;
     text-decoration: none;
-    color: #fff;                  /* white over hero */
+    color: #fff;                
   }
 
   /* links (right) */
@@ -60,7 +52,7 @@
   }
 
   .nav-links li a {
-    color: #fff;                  /* white links */
+    color: #fff;              
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
@@ -68,20 +60,18 @@
     transition: opacity .2s ease, transform .2s ease;
   }
 
-  .nav-links li a:hover {         /* fixed the selector (no space before :hover) */
+  .nav-links li a:hover {    
     opacity: 1;
     transform: translateY(-1px);
   }
 
-  /* smaller screens: tighten spacing */
   @media (max-width: 768px) {
     :root { --nav-h: 56px; }
     .nav-links { gap: clamp(12px, 4vw, 20px); }
     .logo { font-size: 1.25rem; }
   }
 
-  /* HOMEPAGE SECTIONS */
-  /* ===== HERO – short centered banner ===== */
+/* ===== HERO – short centered banner ===== */
 
   .hero {
     position: relative;
@@ -90,16 +80,14 @@
     overflow: hidden;
   }
 
-  /* Banner image fills the hero area */
   .hero-photo .hero-img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;          /* cover the short banner */
-    object-position: center;    /* center the subject */
+    object-fit: cover;         
+    object-position: center;   
   }
 
-  /* Subtle veil for legibility (center-friendly) */
   .hero::before {
     content: "";
     position: absolute;
@@ -108,7 +96,6 @@
     pointer-events: none;
   }
 
-  /* Center the overlayed text block */
   .hero-overlay.cl-anchored {
     position: absolute;
     left: 50%;
@@ -120,7 +107,6 @@
     color: #FFFCF8;
   }
 
-  /* Typography tuned for a shorter banner */
   .hero-title {
     font-family: "playfair-display", serif;
     font-weight: 400;
@@ -142,7 +128,6 @@
     padding-top: 30px;
   }
 
-  /* CTA stays centered and scales linearly */
   .hero-cta {
     display: inline-block;
     margin-inline: auto;
@@ -183,24 +168,23 @@
 .about-split {
   display: grid;
   grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr); /* 1/3 | 2/3 */
-  align-items: stretch;                 /* both columns same track height */
+  align-items: stretch;                 
   width: 100%;
   height: clamp(320px, 45vh, 560px);
 }
 
-/* text column (paint only the left side, not the whole section) */
 .about-copy {
-  background: #9EA68F;                  /* moved from .about-split */
+  background: #9EA68F;                  
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-self: stretch;                   /* ensure full column height */
+  align-self: stretch;                  
   gap: clamp(10px, 2.2vw, 16px);
   padding: clamp(16px, 4vw, 56px);
   color: #140d07;
 
 }
-.about-copy > *:last-child { margin-bottom: 0; }  /* kill stray last p-margin */
+.about-copy > *:last-child { margin-bottom: 0; }
 
 .about-title {
   margin: 0;
@@ -219,9 +203,8 @@
   max-width: 50ch;
 }
 
-/* optional: degree/credit line */
 .about-cred {
-  margin: 6px 0 0 0;                    /* no bottom margin to avoid collapse */
+  margin: 6px 0 0 0;                
   font-size: clamp(0.9rem, 0.85rem + 0.3vw, 1rem);
   opacity: 0.9;
 }
@@ -229,16 +212,16 @@
 /* image column */
 .about-media {
   position: relative;
-  margin: 0;                            /* remove default figure margins */
+  margin: 0;                   
   overflow: hidden;
 }
 .about-media img {
   position: absolute;
-  inset: 0;                             /* fill the figure */
+  inset: 0;        
   width: 100%;
   height: 100%;
-  object-fit: cover;                    /* cover the full 2/3 area */
-  object-position: right center;        /* keep subject toward the right */
+  object-fit: cover; 
+  object-position: right center;
   display: block;
 }
 
@@ -246,27 +229,27 @@
 @media (max-width: 900px) {
   .about-split {
     grid-template-columns: 1fr;
-    height: auto;                       /* let content define height */
+    height: auto;/
   }
   .about-media {
-    height: clamp(260px, 42vh, 480px);  /* shorter image on phones */
+    height: clamp(260px, 42vh, 480px); 
   }
 }
 
 
-    /* ===== SERVICES (revamp) ===== */
+/* ===== SERVICES (revamp) ===== */
   .services {
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
     box-sizing: border-box;
-    background: #F5F0E6;                         /* your palette */
+    background: #F5F0E6;
     padding: clamp(28px, 2vw, 72px) clamp(16px, 4vw, 48px);
     padding-bottom: 50px;
   }
 
   .services-inner {
-    max-width: none;     /* remove 1200px cap */
+    max-width: none;
     width: 100%;
   }
 
@@ -357,7 +340,6 @@
     opacity: .9;
   }
 
-  /* bullet list */
   .svc-list {
     margin: 6px 0 0 0;
     padding-left: 1.1em;
@@ -369,18 +351,17 @@
     font-weight: 300;
   }
 
-  /* tiny meta chips */
   .svc-meta {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: auto; /* push chips to the bottom */
+    margin-top: auto;
   }
   .chip {
     display: inline-block;
     padding: 6px 10px;
     border-radius: 999px;
-    background: #F1DDDB;
+    background: #F2DEDC;
     color: #140d07;
     font-size: .85rem;
     font-family: "roboto", sans-serif;
@@ -388,7 +369,6 @@
     letter-spacing: .1px;
   }
 
-  /* section bottom CTA */
   .services-cta {
     margin-top: clamp(18px, 3vw, 36px);
   }
@@ -422,16 +402,14 @@
   gap: var(--gap);
 }
 
-/* each card = media box + separate caption */
 .work-card {
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: clamp(8px, 1.3vw, 14px);
-  container-type: inline-size;              /* lets overlay text scale per card */
+  container-type: inline-size;
 }
 
-/* media box (rounded) */
 .work-media {
   position: relative;
   overflow: hidden;
@@ -442,11 +420,10 @@
 .work-media img {
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 2;                      /* taller look; change to 4/3 or 5/4 if you want */
+  aspect-ratio: 3 / 2; 
   object-fit: cover;
 }
 
-/* overlay: title + CTA only */
 .work-overlay {
   position: absolute; inset: 0;
   display: flex;
@@ -478,7 +455,6 @@
   border-radius: clamp(6px, 1.2cqw, 10px);
 }
 
-/* caption OUTSIDE the image box */
 .work-caption {
   padding: 0 clamp(4px, 1cqw, 6px);
   color: #000;
@@ -499,35 +475,53 @@
   max-width: 62ch;
 }
 
-.site-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 5px 10px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-  font-family: "roboto", sans-serif;
-  background-color: #677356;
-  color: #fff;
+.work-caption .cap-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
 }
 
-/* hover polish */
+.work-caption .cap-role {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.work-caption .visit-chip {
+  margin-left: auto;
+  white-space: nowrap;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #F2DEDC;
+  color: #140d07;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.work-caption .visit-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
 .work-media:hover img { transform: scale(1.02); transition: transform 280ms ease; }
 
-/* responsive columns */
 @media (max-width: 1200px) { .work-grid-inner { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 900px)  { .work-grid-inner { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 560px)  { .work-grid-inner { grid-template-columns: 1fr; } }
 
 
-  /* ===== FAQ – soft pill accordion, 2×3 grid ===== */
+/* ===== FAQ – soft pill accordion, 2×3 grid ===== */
 
 .faq-section {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   box-sizing: border-box;
-  background: #9EA68F; /* your light sand */
+  background: #9EA68F;
   padding: clamp(28px, 4vw, 72px) clamp(16px, 4vw, 48px);
   color: #140d07;
 }
@@ -546,11 +540,10 @@
   color: #140d07;
 }
 
-/* Grid – 2 columns desktop, 1 column on small screens */
 .faq-grid {
   --gap: clamp(14px, 2.2vw, 22px);
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* change to 1fr for single-column style */
+  grid-template-columns: repeat(2, minmax(0, 1fr)); 
   gap: var(--gap);
 }
 
@@ -558,15 +551,13 @@
   .faq-grid { grid-template-columns: 1fr; }
 }
 
-/* Card wrapper */
 .faq-item {
-  background: transparent; /* the “card” look is on summary */
+  background: transparent;
   border: none;
   border-radius: 18px;
   overflow: hidden;
 }
 
-/* Clickable header */
 .faq-item > summary {
   list-style: none;
   display: flex;
@@ -576,7 +567,7 @@
 
   cursor: pointer;
   padding: clamp(16px, 2.2vw, 20px) clamp(18px, 2.6vw, 24px);
-  background: #FFFCF8;            /* soft card surface */
+  background: #FFFCF8;          
   border: 1px solid rgba(0,0,0,0.08);
   border-radius: 18px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
@@ -589,19 +580,17 @@
 
 .faq-item > summary::-webkit-details-marker { display: none; }
 
-/* Icon bubble on the right (plus → ×) */
 .faq-icon {
   flex: 0 0 auto;
   width: 38px;
   height: 38px;
   border-radius: 999px;
-  background: #929D74;                 /* your muted green */
+  background: #929D74;               
   position: relative;
   box-shadow: inset 0 0 0 0 rgba(0,0,0,0.06);
   transition: transform .2s ease, background-color .2s ease;
 }
 
-/* plus (two bars) */
 .faq-icon::before,
 .faq-icon::after {
   content: "";
@@ -610,19 +599,17 @@
   top: 50%;
   width: 18px;
   height: 2px;
-  background: #FFFCF8;                 /* white-ish */
+  background: #FFFCF8;              
   transform: translate(-50%, -50%);
   border-radius: 2px;
 }
 .faq-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
 
-/* When open: rotate the whole icon 45deg to look like an × */
 .faq-item[open] .faq-icon {
   transform: rotate(45deg);
-  background: #7E8963;                 /* slightly darker */
+  background: #7E8963;
 }
 
-/* Answer pane */
 .faq-answer {
   font-family: "roboto", sans-serif;
   font-weight: 300;
@@ -641,23 +628,18 @@
   transition: max-height .28s ease, padding .28s ease, margin-top .28s ease;
 }
 
-/* expand smoothly */
 .faq-item[open] .faq-answer {
-  max-height: 400px; /* enough for typical answers */
+  max-height: 400px; 
   padding: clamp(16px, 2.4vw, 22px) clamp(20px, 2.8vw, 26px);
   margin-top: 12px;
 }
 
-
-/* CONTACT CTA — slimmer */
 .contact-cta {
   position: relative;
   overflow: hidden;
-  background: #9EA68F;           /* fallback if image fails */
+  background: #9EA68F;        
   color: #FFFCF8;
   text-align: center;
-
-  /* tighter padding + a modest height target */
   padding: clamp(12px, 2.5vw, 32px) clamp(12px, 3vw, 24px);
   min-height: clamp(140px, 20vh, 220px);
 
@@ -671,12 +653,11 @@
   isolation: isolate;
 }
 
-/* background image */
 .contact-cta::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/images/b.jpg"); /* update path if needed */
+  background-image: url("/images/b.jpg");
   background-size: cover;
   background-position: center 65%;
   background-repeat: no-repeat;
@@ -684,7 +665,6 @@
   transform: translateZ(0);
 }
 
-/* subtle overlay for legibility */
 .contact-cta::after {
   content: "";
   position: absolute;
@@ -697,7 +677,6 @@
   z-index: -1;
 } 
 
-/* optional: tighten heading & copy so the block stays compact */
 .contact-cta h2 {
   margin: 0 0 8px 0;
   font-size: clamp(1.4rem, 2.6vw, 2rem);
@@ -708,7 +687,6 @@
   opacity: 0.95;
 }
 
-/* button */
 .contact-cta .whitebtn,
 .contact-cta a.whitebtn,
 .contact-cta a.btn {
