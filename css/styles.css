@@ -170,7 +170,7 @@
   grid-template-columns: minmax(240px, 1fr) minmax(0, 2fr); /* 1/3 | 2/3 */
   align-items: stretch;                 
   width: 100%;
-  height: clamp(320px, 45vh, 560px);
+  height: auto;
 }
 
 .about-copy {
@@ -229,12 +229,13 @@
 @media (max-width: 900px) {
   .about-split {
     grid-template-columns: 1fr;
-    height: auto;/
+    height: auto;               /* fixed */
   }
-  .about-media {
-    height: clamp(260px, 42vh, 480px); 
+  .about-media {                /* keeps the image visible when stacked */
+    height: clamp(260px, 42vh, 480px);
   }
 }
+
 
 
 /* ===== SERVICES (revamp) ===== */
