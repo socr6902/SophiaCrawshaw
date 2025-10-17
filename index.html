@@ -51,17 +51,6 @@
       </section>
       
 
-    <!-- <nav class="navbar under-hero" aria-label="Primary">
-      <div class="nav-container">
-        <ul class="nav-links">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav> -->
-
 
     <section class="about-dev" id="about">
       <div class="about-dev__copy">
@@ -105,35 +94,51 @@
     
      
     
-    <section class="services" id="services">
-      <div class="services-inner">
-        <header class="services-lead">
-          <h2 class="services-title">How to Get Started</h2>
-          <p class="services-intro">
-            A simple three-step process to take your project from idea to launch.
-          </p>
-        </header>
+    <div class="services-grid services-steps">
+      <!-- CARD 1 -->
+      <article class="flip-card" data-step="01">
+        <button class="flip-toggle" aria-expanded="false">
+          <span class="sr-only">Reveal step 1</span>
+          <div class="card">
+            <div class="card-face back" aria-hidden="true"></div>
+            <div class="card-face front">
+              <h3 class="svc-title">Schedule a Consult</h3>
+              <p class="svc-body">We’ll talk through your vision, goals, and the details needed to bring your site to life.</p>
+            </div>
+          </div>
+        </button>
+      </article>
     
-        <div class="services-grid services-steps">
-
-          <article class="service-card">
-            <h3 class="svc-title">Schedule a Consult</h3>
-            <p class="svc-body">We’ll talk through your vision, goals, and the details needed to bring your site to life.</p>
-          </article>
-
-          <article class="service-card">
-            <h3 class="svc-title">Choose a Package</h3>
-            <p class="svc-body">Select the option that fits your goals—whether it’s a one-time build or ongoing support.</p>
-          </article>
+      <!-- CARD 2 -->
+      <article class="flip-card" data-step="02">
+        <button class="flip-toggle" aria-expanded="false">
+          <span class="sr-only">Reveal step 2</span>
+          <div class="card">
+            <div class="card-face back" aria-hidden="true"></div>
+            <div class="card-face front">
+              <h3 class="svc-title">Choose a Package</h3>
+              <p class="svc-body">Select the option that fits your goals, whether it’s a one-time build or ongoing support.</p>
+            </div>
+          </div>
+        </button>
+      </article>
     
-          <article class="service-card">
-            <h3 class="svc-title">Make it Official</h3>
-            <p class="svc-body">Approve the plan and timeline—then I get to work while you relax and watch it come together.</p>
-          </article>
-        </div>
+      <!-- CARD 3 -->
+      <article class="flip-card" data-step="03">
+        <button class="flip-toggle" aria-expanded="false">
+          <span class="sr-only">Reveal step 3</span>
+          <div class="card">
+            <div class="card-face back" aria-hidden="true"></div>
+            <div class="card-face front">
+              <h3 class="svc-title">Make it Official</h3>
+              <p class="svc-body">Approve the plan and timeline, then I get to work while you relax and watch it come together.</p>
+            </div>
+          </div>
+        </button>
+      </article>
+    </div>
     
-      </div>
-    </section>
+    
     
     
   
@@ -362,4 +367,11 @@
     <section class="contact-cta">
       <h2>Have a project in mind?</h2>
       <p>Let’s talk and bring your vision to life.</p>
-      <a href="contact.html" class
+      <a href="contact.html" class="whitebtn">Contact Me</a>
+    </section>
+
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
