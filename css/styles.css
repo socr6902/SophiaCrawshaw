@@ -541,7 +541,7 @@ html, body {
 
 /* ===== Services (shortened card version) ===== */
 :root{
-  --services-bg: url("/images/blue.jpg");
+  --services-bg: url("/images/y.jpg");
   --paper:#F2F0E4;
   --ink:#0D0D0D;
 }
@@ -566,7 +566,7 @@ html, body {
     /* background image */
     var(--services-bg);
   background-size: cover;
-  background-position: center 10%;
+  background-position: center 50%;
   background-blend-mode: multiply; /* makes the image interact with gray overlay */
   z-index: 0;
 }
