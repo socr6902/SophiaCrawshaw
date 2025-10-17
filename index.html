@@ -7,24 +7,41 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://use.typekit.net/azv4jsw.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Instrument+Serif:ital@0;1&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-    <main>
+    <main> 
 
-    <!-- HERO -->
-    <section class="hero hero-photo" aria-label="Sophia Crawshaw — Freelance Web Design and Deployment">
-      <img src="/images/ocean.jpg" alt="Sophia Crawshaw" class="hero-img" />
-      <div class="hero-overlay cl-anchored">
-        <h1 class="hero-title">Web Design &amp; Development</h1>
-        <p class="hero-subtitle">I build clean, accessible, responsive websites for creatives, businesses, and startups.</p>
-        <!-- <a href="contact.html" class="whitebtn hero-cta">Let’s Work Together</a> -->
-      </div>
-    </section>   
     
+      <section class="split-hero" aria-label="Sophia Crawshaw — Web Design & Development">
+        <!-- full-width nameplate over both columns -->
+        <div class="nameplate" aria-hidden="true">
+          <span class="name-seg left">SOPHIA</span>
+          <span class="name-seg right">CRAWSHAW</span>
+        </div>
+      
+        <!-- LEFT: 40% box -->
+        <div class="hero-left">
+          <div class="left-content">
+            <p class="kicker">FREELANCE WEB DESIGN &amp; DEVELOPMENT</p>
+            <h2 class="title">Simple. Accessible. Beautifully built.</h2>
+            <a class="cta" href="portfolio.html">Contact</a>
+          </div>
+        </div>
+      
+        <!-- RIGHT: 60% image -->
+        <div class="hero-right">
+          <img src="/images/ocean.jpg" alt="Coastal cliff over ocean" />
+        </div>
+      </section>
+      
+
     <nav class="navbar under-hero" aria-label="Primary">
       <div class="nav-container">
-        <a href="index.html" class="logo">Sophia Crawshaw</a>
         <ul class="nav-links">
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
@@ -34,104 +51,79 @@
       </div>
     </nav>
 
-    <section class="about-split" id="about">
-      <div class="about-copy">
-        <h2 class="about-title">About</h2>
-        <p class="about-blurb">
-          I’m Sophia Crawshaw — a freelance web designer & developer who builds fast,
-          accessible, and visually thoughtful sites. I love clear typography, tidy code,
-          and shipping work that’s easy for clients to keep fresh.
-        </p>
-        <p class="about-meta"><small>Computer Science & Design, B.A. — University of Colorado Boulder</small></p>
-        
-      </div>
 
-      <figure class="about-media">
-        <img src="images/ab.png" alt="Portrait of Sophia Crawshaw" />
-      </figure>
+    <section class="about-dev" id="about">
+      <div class="about-dev__copy">
+        <p class="about-dev__kicker">About your developer</p>
+    
+        <h2 class="about-dev__title">
+          Natural, balanced websites—<br>
+          built with care.
+        </h2>
+    
+        <p class="about-dev__blurb">
+          I’m Sophia Crawshaw — a web designer & developer who builds fast, accessible, and visually thoughtful sites. I handle everything from early wireframes and design systems to clean, production-ready code. I love clear typography, tidy structure, and shipping work that’s easy for clients to keep fresh.
+        </p>
+    
+        <a href="portfolio.html" class="cta">See work</a>
+      </div>
+    
+      <div class="about-dev__side">
+        <div class="about-dev__circle">
+          <img src="/images/rect.png" alt="Portrait of the developer" />
+        </div>
+    
+        <div class="about-dev__rail" aria-label="Social links">
+          <span>social</span>
+          <i></i>
+          <a href="https://instagram.com/" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <circle cx="17.5" cy="6.5" r="1.5"/>
+            </svg>
+          </a>
+          <a href="https://github.com/socr6902" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.6 2.1 3.8 1.4v-2.2c-3.1-.4-6.4-1.5-6.4-6.8 0-1.5.5-2.7 1.4-3.7-.1-.4-.6-1.8.1-3.7 0 0 1.2-.4 3.8 1.4a12.8 12.8 0 0 1 6.9 0c2.6-1.8 3.8-1.4 3.8-1.4.7 1.9.2 3.3.1 3.7a5.1 5.1 0 0 1 1.4 3.7c0 5.3-3.3 6.4-6.5 6.8v2.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/>
+            </svg>
+          </a>
+        </div>        
+      </div>
     </section>
+    
     
     <section class="services" id="services">
       <div class="services-inner">
         <header class="services-lead">
-          <h2 class="services-title">Services</h2>
+          <h2 class="services-title">How to Get Started</h2>
           <p class="services-intro">
-            From discovery to launch—and beyond. Every build is fast, accessible, and easy to update.
+            A simple three-step process to take your project from idea to launch.
           </p>
-          <!-- <a href="contact.html" class="bluebtn">Start a project →</a> -->
         </header>
     
-        <div class="services-grid services-4">
-          <!-- 1) Design & Discovery -->
+        <div class="services-grid services-steps">
+
           <article class="service-card">
-            <h3 class="svc-title">Design & Discovery</h3>
-            <p class="svc-sub">Brand fit, UX flow, and high-fidelity mockups.</p>
-            <ul class="svc-list">
-              <li>Audit, goals, & success metrics</li>
-              <li>Site map, user flows, wireframes</li>
-              <li>Visual direction (type, color, comps)</li>
-              <li>High-fidelity mockups in Figma</li>
-            </ul>
-            <div class="svc-meta">
-              <span class="chip">1–2 weeks</span>
-              <span class="chip">Best for new sites</span>
-            </div>
+            <h3 class="svc-title">Schedule a Consult</h3>
+            <p class="svc-body">We’ll talk through your vision, goals, and the details needed to bring your site to life.</p>
+          </article>
+
+          <article class="service-card">
+            <h3 class="svc-title">Choose a Package</h3>
+            <p class="svc-body">Select the option that fits your goals—whether it’s a one-time build or ongoing support.</p>
           </article>
     
-          <!-- 2) Design & Build / Code (Handoff) -->
           <article class="service-card">
-            <h3 class="svc-title">Design & Build (Handoff)</h3>
-            <p class="svc-sub">Custom site, production-ready, fully yours.</p>
-            <ul class="svc-list">
-              <li>Semantic, responsive HTML/CSS/JS</li>
-              <li>Performance budget & image optimization</li>
-              <li>WCAG-minded components & keyboard nav</li>
-              <li>Repo, docs, and deploy (Vercel/Netlify/etc.)</li>
-            </ul>
-            <div class="svc-meta">
-              <span class="chip">2–4 weeks</span>
-              <span class="chip">Full ownership</span>
-            </div>
-          </article>
-    
-          <!-- 3) Design & Build / Code (Maintain) -->
-          <article class="service-card">
-            <h3 class="svc-title">Design & Build (Maintain)</h3>
-            <p class="svc-sub">Ongoing updates, fixes, and enhancements.</p>
-            <ul class="svc-list">
-              <li>Monthly content & small features</li>
-              <li>Bug fixes, backups, & monitoring</li>
-              <li>Perf & accessibility touch-ups</li>
-              <li>Quarterly review & roadmap</li>
-            </ul>
-            <div class="svc-meta">
-              <span class="chip">Monthly</span>
-              <span class="chip">Best for growth</span>
-            </div>
-          </article>
-    
-          <!-- 4) Performance & Accessibility Audits -->
-          <article class="service-card">
-            <h3 class="svc-title">Performance & Accessibility Audits</h3>
-            <p class="svc-sub">Measure, fix, and ship improvements.</p>
-            <ul class="svc-list">
-              <li>Lighthouse & Core Web Vitals report</li>
-              <li>Color contrast, ARIA, focus & keyboard</li>
-              <li>Asset, font, and script optimization</li>
-              <li>Action plan + optional implementation</li>
-            </ul>
-            <div class="svc-meta">
-              <span class="chip">1–2 weeks</span>
-              <span class="chip">Existing sites</span>
-            </div>
+            <h3 class="svc-title">Make it Official</h3>
+            <p class="svc-body">Approve the plan and timeline—then I get to work while you relax and watch it come together.</p>
           </article>
         </div>
     
-        <!-- <div class="services-cta">
-          <a href="services.html" class="bluebtn">See detailed packages →</a>
-        </div> -->
       </div>
     </section>
+    
+    
   
    
 
@@ -311,4 +303,58 @@
               <div class="faq-answer">
                 Nope—share your goals and content and I’ll handle the build. I include a short
                 handoff so you’re comfortable updating.
-     
+              </div>
+            </details>
+
+            <!-- 4 -->
+            <details class="faq-item">
+              <summary>
+                <span>Can you work with my existing site?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                Yes. I can improve performance, accessibility, and UX, or add new components
+                while keeping your current stack.
+              </div>
+            </details>
+
+            <!-- 5 -->
+            <details class="faq-item">
+              <summary>
+                <span>What do you need to get started?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                A quick brief (goals, audience, examples), brand assets (logo, colors, fonts),
+                and access to hosting/repos if we’re iterating on an existing site.
+              </div>
+            </details>
+
+            <!-- 6 -->
+            <details class="faq-item">
+              <summary>
+                <span>Do you provide hosting/CMS recommendations?</span>
+                <span class="faq-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-answer">
+                Absolutely. I frequently deploy to Vercel/Netlify and can set up a simple CMS flow,
+                or keep it code-only—whatever fits your team.
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta">
+      <h2>Have a project in mind?</h2>
+      <p>Let’s talk and bring your vision to life.</p>
+      <a href="contact.html" class="whitebtn">Contact Me</a>
+    </section>
+
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
