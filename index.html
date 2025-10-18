@@ -35,7 +35,7 @@
       
         <!-- RIGHT: 60% image -->
       <div class="hero-right">
-        <img src="/images/lib.jpg" alt="Coastal cliff over ocean" />
+        <img src="/images/computer.jpg" alt="Coastal cliff over ocean" />
 
         <!-- overlay nav that sits on the image, bottom-right -->
         <nav class="hero-image-nav" aria-label="Primary">
@@ -92,52 +92,73 @@
       </div>
     </section>
     
-     
+    <hr class="red-line">
     
-    <div class="services-grid services-steps">
-      <!-- CARD 1 -->
-      <article class="flip-card" data-step="01">
-        <button class="flip-toggle" aria-expanded="false">
-          <span class="sr-only">Reveal step 1</span>
-          <div class="card">
-            <div class="card-face back" aria-hidden="true"></div>
-            <div class="card-face front">
-              <h3 class="svc-title">Schedule a Consult</h3>
-              <p class="svc-body">We’ll talk through your vision, goals, and the details needed to bring your site to life.</p>
-            </div>
-          </div>
-        </button>
-      </article>
+    <section class="services" id="services">
+      <div class="services-inner">
+        <header class="services-lead">
+          <h2 class="services-title">Pick A Card</h2>
+          <p class="services-intro">
+            A simple three-step process to take your project from idea to launch.
+          </p>
+        </header>
     
-      <!-- CARD 2 -->
-      <article class="flip-card" data-step="02">
-        <button class="flip-toggle" aria-expanded="false">
-          <span class="sr-only">Reveal step 2</span>
-          <div class="card">
-            <div class="card-face back" aria-hidden="true"></div>
-            <div class="card-face front">
-              <h3 class="svc-title">Choose a Package</h3>
-              <p class="svc-body">Select the option that fits your goals, whether it’s a one-time build or ongoing support.</p>
-            </div>
-          </div>
-        </button>
-      </article>
+        <!-- Cards row -->
+        <div class="services-grid services-steps">
     
-      <!-- CARD 3 -->
-      <article class="flip-card" data-step="03">
-        <button class="flip-toggle" aria-expanded="false">
-          <span class="sr-only">Reveal step 3</span>
-          <div class="card">
-            <div class="card-face back" aria-hidden="true"></div>
-            <div class="card-face front">
-              <h3 class="svc-title">Make it Official</h3>
-              <p class="svc-body">Approve the plan and timeline, then I get to work while you relax and watch it come together.</p>
-            </div>
-          </div>
-        </button>
-      </article>
-    </div>
+          <!-- 01 -->
+          <article class="flip-card" data-step="01">
+            <button class="flip-toggle" aria-expanded="false">
+              <span class="sr-only">Reveal “Schedule a Consult”</span>
+              <div class="card">
+                <div class="card-face back" aria-hidden="true"></div>
+                <div class="card-face front">
+                  <h3 class="svc-title">Schedule a Consult</h3>
+                  <p class="svc-body">
+                    We’ll talk through your vision, goals, and the details needed to bring your site to life.
+                  </p>
+                </div>
+              </div>
+            </button>
+          </article>
     
+          <!-- 02 -->
+          <article class="flip-card" data-step="02">
+            <button class="flip-toggle" aria-expanded="false">
+              <span class="sr-only">Reveal “Choose a Package”</span>
+              <div class="card">
+                <div class="card-face back" aria-hidden="true"></div>
+                <div class="card-face front">
+                  <h3 class="svc-title">Choose a Package</h3>
+                  <p class="svc-body">
+                    Select the option that fits your goals—whether it’s a one-time build or ongoing support.
+                  </p>
+                </div>
+              </div>
+            </button>
+          </article>
+    
+          <!-- 03 -->
+          <article class="flip-card" data-step="03">
+            <button class="flip-toggle" aria-expanded="false">
+              <span class="sr-only">Reveal “Make it Official”</span>
+              <div class="card">
+                <div class="card-face back" aria-hidden="true"></div>
+                <div class="card-face front">
+                  <h3 class="svc-title">Make it Official</h3>
+                  <p class="svc-body">
+                    Approve the plan and timeline—then I get to work while you relax and watch it come together.
+                  </p>
+                </div>
+              </div>
+            </button>
+          </article>
+    
+        </div>
+      </div>
+    </section>
+    
+    <hr class="red-line">
     
     
     
@@ -145,133 +166,83 @@
    
 
       
-    <section class="skills-stack" aria-label="Skills stack">
-      <div class="skills-inner">
+    <section class="stack-split" id="stack">
+      <!-- LEFT: 40% image -->
+      <div class="stack-left">
+        <img src="/images/computer.jpg" alt="Workspace with design and code" />
+      </div>
+    
+      <!-- RIGHT: 60% tech stack -->
+      <div class="stack-right">
     
         <!-- Front-end -->
-        <div class="skill-row">
-          <div class="skill-tag">FRONT-END</div>
-          <div class="skill-content">
-    
-            <div class="skill-line">
-              <h3 class="skill-h">JavaScript |</h3>
-              <div class="skill-chips">
-                <span class="chip">JavaScript (ES6)</span>
-                <span class="chip">jQuery</span>
-                <span class="chip">Mocha</span>
-                <span class="chip">Chai</span>
-              </div>
-            </div>
-    
-            <div class="skill-line">
-              <h3 class="skill-h">HTML &amp; CSS |</h3>
-              <div class="skill-chips">
-                <span class="chip">Semantic HTML</span>
-                <span class="chip">Responsive Design</span>
-                <span class="chip">Accessibility (WCAG)</span>
-                <span class="chip">Bootstrap</span>
-              </div>
-            </div>
-    
-            <div class="skill-line">
-              <h3 class="skill-h">SwiftUI | </h3>
-              <div class="skill-chips">
-                <span class="chip">Swift</span>
-                <span class="chip">SwiftUI</span>
-              </div>
-            </div>
+        <div class="stack-group">
+          <h3 class="stack-h">Front-end</h3>
+          <div class="stack-chips">
+            <span class="chip">JavaScript (ES6)</span>
+            <span class="chip">jQuery</span>
+            <span class="chip">Mocha</span>
+            <span class="chip">Chai</span>
+            <span class="chip">Semantic HTML</span>
+            <span class="chip">Responsive Design</span>
+            <span class="chip">Accessibility (WCAG)</span>
+            <span class="chip">Bootstrap</span>
           </div>
         </div>
     
         <!-- Back-end -->
-        <div class="skill-row">
-          <div class="skill-tag">Back-end</div>
-          <div class="skill-content">
-    
-            <div class="skill-line">
-              <h3 class="skill-h">Frameworks | </h3>
-              <div class="skill-chips">
-                <span class="chip">Node.js</span>
-                <span class="chip">Express</span>
-                <span class="chip">Vapor (Swift)</span>
-                <span class="chip">RESTful APIs</span>
-              </div>
-            </div>
-    
-            <div class="skill-line">
-              <h3 class="skill-h">Databases | </h3>
-              <div class="skill-chips">
-                <span class="chip">PostgreSQL</span>
-                <span class="chip">MySQL</span>
-                <span class="chip">MongoDB</span>
-                <span class="chip">Cassandra</span>
-                <span class="chip">Firebase</span>
-              </div>
-            </div>
-    
-            <div class="skill-line">
-              <h3 class="skill-h">Tools | </h3>
-              <div class="skill-chips">
-                <span class="chip">AWS</span>
-                <span class="chip">Docker</span>
-                <span class="chip">Postman</span>
-              </div>
-            </div>
+        <div class="stack-group">
+          <h3 class="stack-h">Back-end</h3>
+          <div class="stack-chips">
+            <span class="chip">Node.js</span>
+            <span class="chip">Express</span>
+            <span class="chip">Vapor (Swift)</span>
+            <span class="chip">RESTful APIs</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">MongoDB</span>
+            <span class="chip">Cassandra</span>
+            <span class="chip">Firebase</span>
           </div>
         </div>
     
         <!-- Tools & Design -->
-        <div class="skill-row">
-          <div class="skill-tag">Tools</div>
-          <div class="skill-content">
-    
-            <div class="skill-line">
-              <h3 class="skill-h">General | </h3>
-              <div class="skill-chips">
-                <span class="chip">Git</span>
-                <span class="chip">WordPress</span>
-                <span class="chip">Wireshark</span>
-                <span class="chip">WireGuard</span>
-                <span class="chip">Burp Suite</span>
-                <span class="chip">Webots</span>
-              </div>
-            </div>
-    
-            <div class="skill-line">
-              <h3 class="skill-h">Design &amp; Methods | </h3>
-              <div class="skill-chips">
-                <span class="chip">Figma</span>
-                <span class="chip">Adobe CC</span>
-                <span class="chip">Accessibility</span>
-                <span class="chip">Agile/Scrum</span>
-              </div>
-            </div>
+        <div class="stack-group">
+          <h3 class="stack-h">Tools & Design</h3>
+          <div class="stack-chips">
+            <span class="chip">Git</span>
+            <span class="chip">WordPress</span>
+            <span class="chip">Wireshark</span>
+            <span class="chip">WireGuard</span>
+            <span class="chip">Burp Suite</span>
+            <span class="chip">Webots</span>
+            <span class="chip">Figma</span>
+            <span class="chip">Adobe CC</span>
+            <span class="chip">Agile/Scrum</span>
+            <span class="chip">AWS</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Postman</span>
           </div>
         </div>
     
         <!-- Languages -->
-        <div class="skill-row">
-          <div class="skill-tag">Languages</div>
-          <div class="skill-content">
-            <div class="skill-line">
-              <h3 class="skill-h">Core | </h3>
-              <div class="skill-chips">
-                <span class="chip">C</span>
-                <span class="chip">C++</span>
-                <span class="chip">Python</span>
-                <span class="chip">Scala</span>
-                <span class="chip">Swift</span>
-                <span class="chip">HTML</span>
-                <span class="chip">CSS</span>
-                <span class="chip">JavaScript</span>
-                <span class="chip">SQL</span>
-              </div>
-            </div>
+        <div class="stack-group">
+          <h3 class="stack-h">Languages</h3>
+          <div class="stack-chips">
+            <span class="chip">C</span>
+            <span class="chip">C++</span>
+            <span class="chip">Python</span>
+            <span class="chip">Scala</span>
+            <span class="chip">Swift</span>
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">SQL</span>
           </div>
         </div>
-    
       </div>
     </section>
+    
     
               
     
